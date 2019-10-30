@@ -12,7 +12,7 @@ class ReduxDemo extends Component<ReduxDemoProps> {
     const { name, address } = this.props
     return (
       <div className="demo">
-        Redux:
+        <b>Redux:</b>
         <FormWrapper />
         <button onClick={() => alert(`name: ${name}, address: ${address}`)}>
           Get Data

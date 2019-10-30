@@ -11,7 +11,7 @@ const HooksDemo = () => {
   return (
     <HooksContext.Provider value={sharedContext}>
       <div className="demo">
-        Hooks:
+        <b>Hooks:</b>
         <FormWrapper />
         <button
           onClick={() =>
