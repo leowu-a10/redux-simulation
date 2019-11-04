@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css'
-import HooksDemo from './demo/hooks'
-import ReduxDemo from './demo/redux'
-import TodoApp from './demo/todoWithoutRedux'
+// import HooksDemo from './demo/hooks'
+// import ReduxDemo from './demo/redux'
+// import TodoApp from './demo/todoWithoutRedux'
+import LiteTodoApp from './demo/lite'
 
 const App: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const App: React.FC = () => {
       {/* <HooksDemo /> */}
       <hr />
       {/* <ReduxDemo /> */}
-      <TodoApp />
+      <LiteTodoApp />
     </div>
   )
 }
