@@ -1,4 +1,9 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, useCallback } from 'react'
+
+interface IAction {
+  type: string
+  value: string
+}
 
 interface ITodo {
   id: number
@@ -12,7 +17,7 @@ interface IState {
 
 interface IContextProps {
   state: IState
-  dispatch: any
+  dispatch: React.Dispatch<IAction>
 }
 
 const LiteTodoApp = () => {
@@ -50,17 +55,14 @@ const LiteTodoApp = () => {
     const { dispatch } = React.useContext(ContextStore)
     const add = (value: string) => dispatch({ type: 'ADD_TODO', value })
     const [text, setText] = useState('')
+    const onClick = useCallback(() => {
+      add(text)
+      setText('')
+    }, [text])
     return (
       <div>
         <input value={text} onChange={e => setText(e.target.value)} />
-        <button
-          onClick={() => {
-            add(text)
-            setText('')
-          }}
-        >
-          Add
-        </button>
+        <button onClick={onClick}>Add</button>
       </div>
     )
   }
